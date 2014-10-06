@@ -41,11 +41,12 @@ class Devise::PasswordsController < DeviseController
       Rails.logger.debug  "resource.errors.empty"
       respond_with resource, location: after_resetting_password_path_for(resource)
     else
-      Rails.logger.debug  "Houston, we have a problem"
-      Rails.logger.debug  "Houston, we have a problem"
-      Rails.logger.debug  "Houston, we have a problem"
-      Rails.logger.debug  "Houston, we have a problem"
-      Rails.logger.debug  "Houston, we have a problem"
+      Rails.logger.debug  "#{resource.errors.inspect}"
+      Rails.logger.debug  "#{resource.errors.inspect}"
+      Rails.logger.debug  "#{resource.errors.inspect}"
+      Rails.logger.debug  "#{resource.errors.inspect}"
+      Rails.logger.debug  "#{resource.errors.inspect}"
+      Rails.logger.debug  "#{resource.errors.inspect}"
       respond_with resource
     end
   end
