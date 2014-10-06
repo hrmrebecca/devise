@@ -28,6 +28,12 @@ class Devise::PasswordsController < DeviseController
 
   # PUT /resource/password
   def update
+    Rails.logger.debug  "#{resource_params.inspect}"
+    Rails.logger.debug  "#{resource_params.inspect}"
+    Rails.logger.debug  "#{resource_params.inspect}"
+    Rails.logger.debug  "#{resource_params.inspect}"
+    Rails.logger.debug  "#{resource_params.inspect}"
+    Rails.logger.debug  "#{resource_params.inspect}"
     self.resource = resource_class.reset_password_by_token(resource_params)
     yield resource if block_given?
 
