@@ -28,9 +28,6 @@ class Devise::PasswordsController < DeviseController
 
   # PUT /resource/password
   def update
-    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
-    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
-    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
     self.resource = resource_class.reset_password_by_token(resource_params)
     yield resource if block_given?
 
@@ -39,8 +36,16 @@ class Devise::PasswordsController < DeviseController
       flash_message = resource.active_for_authentication? ? :updated : :updated_not_active
       set_flash_message(:notice, flash_message) if is_flashing_format?
       sign_in(resource_name, resource)
+      Rails.logger.debug  "resource.errors.empty"
+      Rails.logger.debug  "resource.errors.empty"
+      Rails.logger.debug  "resource.errors.empty"
       respond_with resource, location: after_resetting_password_path_for(resource)
     else
+      Rails.logger.debug  "Houston, we have a problem"
+      Rails.logger.debug  "Houston, we have a problem"
+      Rails.logger.debug  "Houston, we have a problem"
+      Rails.logger.debug  "Houston, we have a problem"
+      Rails.logger.debug  "Houston, we have a problem"
       respond_with resource
     end
   end
