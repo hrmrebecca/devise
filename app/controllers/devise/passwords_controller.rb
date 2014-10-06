@@ -28,7 +28,9 @@ class Devise::PasswordsController < DeviseController
 
   # PUT /resource/password
   def update
-    flash_message = "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
+    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
+    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
+    Rails.logger.debug  "YOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOYOOYO"
     self.resource = resource_class.reset_password_by_token(resource_params)
     yield resource if block_given?
 
